@@ -21,6 +21,6 @@ document.getElementsByClassName('login')[0].addEventListener('click',function(e)
         e.preventDefault;
         alert("Include at least 1 number");
     } else {
-        document.getElementsByClassName('form')[0].innerHTML='<p style="background-color: rgb(119,134,153); font-size:30px;">😊Success!</p>';
+        document.getElementsByClassName('form')[0].innerHTML='<p style="background-color: darkkhaki; font-size:30px;">😊Success!</p>';
     }
 });

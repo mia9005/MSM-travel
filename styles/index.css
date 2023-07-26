@@ -85,35 +85,39 @@
     font-family: "Montserrat";
   }
   body {
-    background-color: azure;
+    background-color: #fffffe;
     width: 100%;
   }
   header {
-    background-color: darkkhaki;
+    background-color: #272343;
     display: flex;
     justify-content: space-between;
-    padding: 4%;
+    padding: 2%;
     align-items: center;
   }
-  header h1 {
-    background-color:  darkkhaki;
+  .name {
+    color: #fffffe;
+    font-size: 2rem;
   }
-  header a {
-    background-color: chartreuse;
-    color: black;
+  .login {
+    background-color: #fffffe;
+    color: #272343;
     text-decoration: none;
-    font-size: 20px;
-    padding: 2%;
-    border-radius: 2vw;
+    font-size: 1.3rem;
+    padding: 1rem;
+    border-radius: 4px;
     font-weight: 600;
   }
-  header a:hover{
-    background-color: green;
-    color: white;
+  .login:hover{
+    background-color: #ffd803;
+    color: #272343;
+  }
+  footer{
+    background-color: #272343;
+    padding: 3%;
   }
   footer p{
-    background-color: darkkhaki;
-    padding: 2%;
+    color: #fffffe;
     text-align: center;
   }
   section {

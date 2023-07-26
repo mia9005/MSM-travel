@@ -68,9 +68,9 @@ class Products {
 }
 const products= [
     new Products('product1','$20','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
-    new Products('product2','$30','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
-    new Products('product3','$40','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
-    new Products('product4','$40','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
+    new Products('product2','$30','./img/couch.webp'),
+    new Products('product3','$40','./img/roomplant.webp'),
+    new Products('product4','$40','./img/door.webp'),
 
 ]
 products.forEach(function(product,i){

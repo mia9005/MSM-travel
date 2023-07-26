@@ -68,9 +68,9 @@ class Products {
 }
 const products= [
     new Products('product1','$20','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
-    new Products('product2','$30','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
-    new Products('product3','$40','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
-    new Products('product4','$40','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
+    new Products('product2','$30','./img/couch.webp'),
+    new Products('product3','$40','./img/roomplant.webp'),
+    new Products('product4','$40','./img/door.webp'),
 
 ]
 products.forEach(function(product,i){
@@ -108,28 +108,29 @@ function removeFromCart(index) {
 
 // カートの内容を更新する関数
 function updateCart() {
-    const cartList = document.getElementById("cartList");
-    cartList.innerHTML = ""; // カート内の商品一覧をクリア
+  const cartList = document.getElementById("cartList");
+  cartList.innerHTML = ""; // カート内の商品一覧をクリア
 
-    let totalPrice = 0;
+  let totalPrice = 0;
 
-    for (let i = 0; i < cart.length; i++) {
-        const cartItem = cart[i];
-        const listItem = document.createElement("div");
-        listItem.className = "cart-item";
-        listItem.innerHTML = `
-            <img src="" alt="">
-            <h3>${cartItem.name}</h3>
-            <p>$${cartItem.price}</p>
-            <button onclick="removeFromCart(${i})">Remove</button>
-        `;
-        cartList.appendChild(listItem); // カート内の商品一覧に追加
+  for (let i = 0; i < cart.length; i++) {
+    const cartItem = cart[i];
+    const listItem = document.createElement("div");
+    listItem.className = "cart-item";
+    listItem.innerHTML = `
+        <img src="" alt="">
+        <h3>${cartItem.name}</h3>
+        <p>$${cartItem.price}</p>
+        <button onclick="removeFromCart(${i})">Remove</button>
+    `;
+    cartList.appendChild(listItem); // カート内の商品一覧に追加
 
-        totalPrice += parseFloat(cartItem.price); // 値段を浮動小数点数に変換して合計に追加
-    }
+    totalPrice += parseFloat(cartItem.price); // 値段を浮動小数点数に変換して合計に追加
+  }
 
-    // 合計金額を表示
-    const totalPriceElement = document.createElement("p");
-    totalPriceElement.textContent = "Total Price: $" + totalPrice.toFixed(2); // 2桁まで表示するように設定
-    cartList.appendChild(totalPriceElement);
+  // 合計金額を表示
+  const totalPriceElement = document.createElement("p");
+  totalPriceElement.classList.add('total-price');
+  totalPriceElement.textContent = "Total Price: $" + totalPrice.toFixed(2); // 2桁まで表示するように設定
+  cartList.appendChild(totalPriceElement);
 }

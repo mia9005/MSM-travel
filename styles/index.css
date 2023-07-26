@@ -301,12 +301,13 @@
 .cart h2 {
   font-size: 2rem;
   color: #272343;
+  width: 260px;
 }
 
 /* shopping cart */
 .shopping-cart {
   text-align: right;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 .shopping-cart h3 {
   font-size: 1.5rem;

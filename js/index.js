@@ -90,3 +90,46 @@ for(let i=0; i<4; i++){
         localStorage.setItem('name',JSON.stringify([title]));
     });
 }
+
+// MAYA Part
+const cart = [];
+
+// カートに商品を追加する関数
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+}
+
+// カートから商品を削除する関数
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// カートの内容を更新する関数
+function updateCart() {
+    const cartList = document.getElementById("cartList");
+    cartList.innerHTML = ""; // カート内の商品一覧をクリア
+
+    let totalPrice = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        const cartItem = cart[i];
+        const listItem = document.createElement("div");
+        listItem.className = "cart-item";
+        listItem.innerHTML = `
+            <img src="" alt="">
+            <h3>${cartItem.name}</h3>
+            <p>$${cartItem.price}</p>
+            <button onclick="removeFromCart(${i})">Remove</button>
+        `;
+        cartList.appendChild(listItem); // カート内の商品一覧に追加
+
+        totalPrice += parseFloat(cartItem.price); // 値段を浮動小数点数に変換して合計に追加
+    }
+
+    // 合計金額を表示
+    const totalPriceElement = document.createElement("p");
+    totalPriceElement.textContent = "Total Price: $" + totalPrice.toFixed(2); // 2桁まで表示するように設定
+    cartList.appendChild(totalPriceElement);
+}

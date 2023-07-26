@@ -9,92 +9,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>MSM-Travel</h1>
-        <a href="form.html">LOGIN</a>
-    </header>
-    <section>
-        <div class="container">
-          <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80" alt="">
-          <div class="all-tooltip">
-            <!-- 商品1 -->
-            <div class="tooltip tooltip-1">
-              <div class="pin">
-                <ion-icon name="add-circle"></ion-icon>
+  <header>
+    <a class="name" href="index.html">MSM</a>
+    <a class="login" href="form.html">LOGIN</a>
+  </header>
+  <section>
+      <div class="container">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80" alt="">
+        <div class="all-tooltip">
+          <!-- 商品1 -->
+          <div class="tooltip tooltip-1">
+            <div class="pin">
+              <ion-icon name="add-circle"></ion-icon>
+            </div>
+            <div class="tooltip-content">
+              <div class="arrow"></div>
+              <div class="img">
+                <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80" alt="">
               </div>
-              <div class="tooltip-content">
-                <div class="arrow"></div>
-                <div class="img">
-                  <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80" alt="">
-                </div>
-                <div class="content">
-                  <h1>ramp</h1>
-                  <p>$200</p>
-                  <button class="btn" onclick="addToCart('Product 1', 200)">add to cart</button>
-                </div>
+              <div class="content">
+                <h1>ramp</h1>
+                <p>$200</p>
+                <button class="btn" onclick="addToCart('Product 1', 200)">add to cart</button>
               </div>
             </div>
-            <!-- 商品2 -->
-            <div class="tooltip tooltip-2">
-              <div class="pin">
-                <ion-icon name="add-circle"></ion-icon>
+          </div>
+          <!-- 商品2 -->
+          <div class="tooltip tooltip-2">
+            <div class="pin">
+              <ion-icon name="add-circle"></ion-icon>
+            </div>
+            <div class="tooltip-content">
+              <div class="arrow"></div>
+              <div class="img">
+                <img src="img/couch.webp" alt="">
               </div>
-              <div class="tooltip-content">
-                <div class="arrow"></div>
-                <div class="img">
-                  <img src="img/couch.webp" alt="">
-                </div>
-                <div class="content">
-                    <h1>couch</h1>
-                    <p>$500</p>
-                    <button class="btn" onclick="addToCart('Product 2', 500)">add to cart</button>
-                </div>
+              <div class="content">
+                  <h1>couch</h1>
+                  <p>$500</p>
+                  <button class="btn" onclick="addToCart('Product 2', 500)">add to cart</button>
               </div>
             </div>
-            <!-- 商品3 -->
-            <div class="tooltip tooltip-3">
-              <div class="pin">
-                <ion-icon name="add-circle"></ion-icon>
+          </div>
+          <!-- 商品3 -->
+          <div class="tooltip tooltip-3">
+            <div class="pin">
+              <ion-icon name="add-circle"></ion-icon>
+            </div>
+            <div class="tooltip-content">
+              <div class="arrow"></div>
+              <div class="img">
+                <img src="img/roomplant.webp" alt="">
               </div>
-              <div class="tooltip-content">
-                <div class="arrow"></div>
-                <div class="img">
-                  <img src="img/roomplant.webp" alt="">
-                </div>
-                <div class="content">
-                    <h1>plant</h1>
-                    <p>$50</p>
-                    <button class="btn" onclick="addToCart('Product 3', 50)">add to cart</button>
-                </div>
+              <div class="content">
+                  <h1>plant</h1>
+                  <p>$50</p>
+                  <button class="btn" onclick="addToCart('Product 3', 50)">add to cart</button>
               </div>
             </div>
-            <!-- 商品4 -->
-            <div class="tooltip tooltip-4">
-              <div class="pin">
-                <ion-icon name="add-circle"></ion-icon>
+          </div>
+          <!-- 商品4 -->
+          <div class="tooltip tooltip-4">
+            <div class="pin">
+              <ion-icon name="add-circle"></ion-icon>
+            </div>
+            <div class="tooltip-content">
+              <div class="arrow"></div>
+              <div class="img">
+                <img src="img/door.webp" alt="">
               </div>
-              <div class="tooltip-content">
-                <div class="arrow"></div>
-                <div class="img">
-                  <img src="img/door.webp" alt="">
-                </div>
-                <div class="content">
-                    <h1>White Door</h1>
-                    <p>$300</p>
-                    <button class="btn" onclick="addToCart('Product 4', 300)">add to cart</button>
-                </div>
+              <div class="content">
+                  <h1>White Door</h1>
+                  <p>$300</p>
+                  <button class="btn" onclick="addToCart('Product 4', 300)">add to cart</button>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    <!-- Shopping Cart -->
-    <div class="cart">
+      </div>
+      <!-- Shopping Cart -->
+      <div class="cart">
         <h2>Shopping Cart</h2>
         <div class="shopping-cart" id="cartList">
             <!-- カート内の商品一覧が表示される場所 -->
         </div>
       </div>
+    </section>
+    
     <footer>
         <p>Designed By MAO & SACHIKA & MIA</p>
     </footer>

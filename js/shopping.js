@@ -67,10 +67,10 @@ class Products {
     }
 }
 const products= [
-    new Products('product1','$20','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
-    new Products('product2','$30','./img/couch.webp'),
-    new Products('product3','$40','./img/roomplant.webp'),
-    new Products('product4','$40','./img/door.webp'),
+    new Products('Ramp','$200','https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80'),
+    new Products('Couch','$500','./img/couch.webp'),
+    new Products('Plant','$50','./img/roomplant.webp'),
+    new Products('White Door','$300','./img/door.webp'),
 
 ]
 products.forEach(function(product,i){
@@ -78,26 +78,15 @@ products.forEach(function(product,i){
     document.querySelectorAll('.content p')[i].innerHTML=product.price;
     document.querySelectorAll('.tooltip-content img')[i].src=product.img;
 });
-for(let i=0; i<4; i++){
-    document.querySelectorAll('.btn')[i].addEventListener('click',function(e){
-        var title = e.target.previousElementSibling.previousElementSibling;
-        var price = e.target.previousElementSibling;
-        if(localStorage.getItem('name') != null){
-            var inLocal = JSON.parse(localStorage.name);
-            inLocal.push(title);
-            localStorage.setItem('name',JSON.stringify(inLocal));            
-        }
-        localStorage.setItem('name',JSON.stringify([title]));
-    });
-}
 
-// MAYA Part
+
 const cart = [];
 
 // カートに商品を追加する関数
 function addToCart(name, price) {
     cart.push({ name, price });
     updateCart();
+    return
 }
 
 // カートから商品を削除する関数
@@ -127,6 +116,24 @@ function updateCart() {
 
     totalPrice += parseFloat(cartItem.price); // 値段を浮動小数点数に変換して合計に追加
   }
+  let i = 0;
+
+// while (i < cart.length) {
+//   const cartItem = cart[i];
+//   const listItem = document.createElement("div");
+//   listItem.className = "cart-item";
+//   listItem.innerHTML = `
+//     <img src="" alt="">
+//     <h3>${cartItem.name}</h3>
+//     <p>$${cartItem.price}</p>
+//     <button onclick="removeFromCart(${i})">Remove</button>
+//   `;
+//   cartList.appendChild(listItem); // add the items to cart
+
+//   totalPrice += parseFloat(cartItem.price); // change the price to float and sum total
+
+//   i++;
+// }
 
   // 合計金額を表示
   const totalPriceElement = document.createElement("p");

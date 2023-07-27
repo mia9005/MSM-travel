@@ -1,24 +1,24 @@
-document.getElementsByClassName('login')[0].addEventListener('click',function(e){
+document.getElementById('loginForm').addEventListener('submit',function(e){
     var emailInput = document.getElementById('email').value;
     var passwordInput = document.getElementById('password').value;
 
     if(emailInput == ''){
-        e.preventDefault;
+        e.preventDefault();
         alert("Email is null");
     } else if( /\S+@\S+\.\S+/.test(emailInput) == false){
-        e.preventDefault;
+        e.preventDefault();
         alert("It's not an email type");
     } else if(passwordInput ==''){
-        e.preventDefault;
+        e.preventDefault();
         alert("Password is null");
     } else if(passwordInput.length < 12){
-        e.preventDefault;
+        e.preventDefault();
         alert("Include at least 12 letters");
     } else if(/[A-Z]/.test(passwordInput) == false){
-        e.preventDefault;
+        e.preventDefault();
         alert("Include at least 1 uppercase");
     } else if(/[0-9]/.test(passwordInput) == false){
-        e.preventDefault;
+        e.preventDefault();
         alert("Include at least 1 number");
     } else {
         window.location.href = "shopping.html";    

@@ -116,7 +116,7 @@ function updateCart() {
 
     totalPrice += parseFloat(cartItem.price); // 値段を浮動小数点数に変換して合計に追加
   }
-  let i = 0;
+//   let i = 0;
 
 // while (i < cart.length) {
 //   const cartItem = cart[i];

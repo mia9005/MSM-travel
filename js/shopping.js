@@ -11,29 +11,26 @@ function contentPosition() {
     const arrow = tooltip.querySelector(".arrow");
     const pinLeft = pin.offsetLeft;
 
-
-    content.style.left = pinLeft - content.offsetWidth / 2 + "px";
-    content.style.top = pin.offsetTop + 30 + "px";
-    // if (pinLeft + content.offsetWidth / 2 > container.offsetWidth) {
-    //   const extraLeft =
-    //     container.offsetWidth - (pinLeft + content.offsetWidth / 2);
-    //   // console.log('right-conflict', tooltip)
-    //   content.style.left =
-    //     pinLeft - content.offsetWidth / 2 + "px";
-    //   content.style.top = pin.offsetTop +30 + "px";
-    // } else if (
-    //   pin.offsetLeft + container.offsetLeft <
-    //   content.offsetWidth / 2
-    // ) {
-    //   // console.log('left conflict', pin.offsetLeft)
-    //   content.style.left = -container.offsetLeft + "px";
-    //   content.style.top = pin.offsetTop + 30 + "px";
-    // } else {
-    //   content.style.left = pinLeft - content.offsetWidth / 2 + "px";
-    //   content.style.top = pin.offsetTop + 30 + "px";
-    // }
-    // arrow.style.left =
-    //   pinLeft - content.offsetLeft + pin.offsetWidth / 2 + "px";
+    if (pinLeft + content.offsetWidth / 2 > container.offsetWidth) {
+      const extraLeft =
+        container.offsetWidth - (pinLeft + content.offsetWidth / 2);
+      // console.log('right-conflict', tooltip)
+      content.style.left =
+        pinLeft - content.offsetWidth / 2 + "px";
+      content.style.top = pin.offsetTop +30 + "px";
+    } else if (
+      pin.offsetLeft + container.offsetLeft <
+      content.offsetWidth / 2
+    ) {
+      // console.log('left conflict', pin.offsetLeft)
+      content.style.left = -container.offsetLeft + "px";
+      content.style.top = pin.offsetTop + 30 + "px";
+    } else {
+      content.style.left = pinLeft - content.offsetWidth / 2 + "px";
+      content.style.top = pin.offsetTop + 30 + "px";
+    }
+    arrow.style.left =
+      pinLeft - content.offsetLeft + pin.offsetWidth / 2 + "px";
   });
 }
 tooltips.forEach((tooltip) => {

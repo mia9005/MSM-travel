@@ -1,5 +1,4 @@
 const tooltips = document.querySelectorAll(".all-tooltip .tooltip");
-const fullDiv = document.querySelector("section");
 const container = document.querySelector(".container");
 let timeoutId;
 window.addEventListener("resize", contentPosition);
@@ -11,9 +10,9 @@ function contentPosition() {
     const content = tooltip.querySelector(".tooltip-content");
     const arrow = tooltip.querySelector(".arrow");
     const pinLeft = pin.offsetLeft;
-    if (pinLeft + content.offsetWidth / 2 > fullDiv.offsetWidth) {
+    if (pinLeft + content.offsetWidth / 2 > container.offsetWidth) {
       const extraLeft =
-        fullDiv.offsetWidth - (pinLeft + content.offsetWidth / 2);
+      container.offsetWidth - (pinLeft + content.offsetWidth / 2);
       // console.log('right-conflict', tooltip)
       content.style.left =
         pinLeft - content.offsetWidth / 2 + extraLeft - 30 + "px";

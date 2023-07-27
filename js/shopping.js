@@ -82,23 +82,23 @@ products.forEach(function(product,i){
 
 const cart = [];
 
-// カートに商品を追加する関数
+// Function to add items to cart
 function addToCart(name, price) {
     cart.push({ name, price });
     updateCart();
     return
 }
 
-// カートから商品を削除する関数
+// Function to remove an item from the cart
 function removeFromCart(index) {
     cart.splice(index, 1);
     updateCart();
 }
 
-// カートの内容を更新する関数
+// Function to update cart contents
 function updateCart() {
   const cartList = document.getElementById("cartList");
-  cartList.innerHTML = ""; // カート内の商品一覧をクリア
+  cartList.innerHTML = ""; // Clear the list of products in the cart
 
   let totalPrice = 0;
 
@@ -112,9 +112,9 @@ function updateCart() {
         <p>$${cartItem.price}</p>
         <button onclick="removeFromCart(${i})">Remove</button>
     `;
-    cartList.appendChild(listItem); // カート内の商品一覧に追加
+    cartList.appendChild(listItem); // Add to the list of products in your cart
 
-    totalPrice += parseFloat(cartItem.price); // 値段を浮動小数点数に変換して合計に追加
+    totalPrice += parseFloat(cartItem.price); // Convert prices to floating point numbers and add to total
   }
 //   let i = 0;
 
